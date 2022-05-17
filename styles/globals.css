@@ -14,3 +14,26 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.nav {
+  background: transparent;
+  color: white;
+  z-index: 100;
+  position: fixed;
+  transition: linear background 0.1s;
+}
+.nav-show{
+  background: rgb(255, 255, 255, 0.8);
+  color: black;
+  backdrop-filter: blur(8px);
+}
+
+.dropdownbtn:hover{
+  background: rgb(255, 255, 255, 0.1);
+  color: black;
+}
+
+.dropdownbtn:focus{
+  background: rgb(255, 255, 255, 0.1);
+  color: black;
+}
