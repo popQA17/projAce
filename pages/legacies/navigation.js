@@ -1,15 +1,19 @@
 import {useRouter} from 'next/router'
-import { Box, UnorderedList, ListItem, Text, Stack, HStack, Image} from '@chakra-ui/react'
+import { Box, UnorderedList, ListItem, Text, Stack, HStack, Image, useMediaQuery} from '@chakra-ui/react'
 import LegacyCard from '../../components/LegacyCard'
 import DidYouKnow from '../../components/DidYouKnow'
 export default function Navigation(){
   const router = useRouter()
+  const [smalldevice] = useMediaQuery('(max-width: 850px)')
   return(
     <div>
       <Box 
         textAlign={'center'}  
         padding={'100px 0'} 
         background={'gray.100'} 
+
+        backgroundColor={'rgba(0,0,0,.5)'} /* Tint color */
+        backgroundBlendMode={'multiply'}
         backgroundImage={
           'url(https://studycli.org/wp-content/uploads/2021/01/yuan-dynasty-maritime-trade.jpg)'
         }
@@ -28,8 +32,8 @@ export default function Navigation(){
           Navigation
         </Text>
       </Box>
-      <DidYouKnow/>
-        <Stack spacing={'20px'} padding={'100px 0px'}>
+        <Box width={'100%'} display='flex' justifyContent='center'>
+        <Stack spacing={'20px'}   padding={'100px 50px'}  width={smalldevice ? '99vw' : '60vw'}>
           <LegacyCard title='Compass' img='https://i.pinimg.com/originals/8b/dd/8b/8bdd8be0b338022d69ac8e4e8ab1dc09.jpg'>
             <UnorderedList>
               <ListItem fontSize="17px">The ancient compass was invented in ancient China by the Han dynasty in 200 BC and was an important tool for navigation. The ancient compass was used for checking directions when going sailing  in the sea.</ListItem>
@@ -49,6 +53,7 @@ export default function Navigation(){
               </UnorderedList>
             </LegacyCard>
         </Stack>
+        </Box>
     </div>
   )
 }

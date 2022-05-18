@@ -1,11 +1,11 @@
-import { Box, Text, VStack, Image} from '@chakra-ui/react'
+import { Box, Text, VStack, Image, scaleFadeConfig} from '@chakra-ui/react'
 const IndiviDualCard = (props) => {
   return(
-    <VStack borderRadius={'10px'} border={'1px'} borderColor={'blue.500'} overflow={'auto'} width={'340px'} bg={'gray.50'} data-aos="zoom-in" spacing={'10px'}>
+    <VStack cursor={'pointer'} borderRadius={'10px'} transform={'scale(1)'} _hover={{transform: 'scale(1.05)', borderColor: 'blue.500'}} transition={'ease-in-out 0.3s all'} border={'1px'} bg={'gray.50'} borderColor={'transparent'} overflow={'auto'} width={'340px'} spacing={'10px'}>
       <Image height='auto' 
       src={props.img} width={'100%'}/>
       <Box height={'100%'} padding={'50px 40px'}>
-        <Text fontSize='30px'>
+        <Text fontSize='25px'>
           {props.title}
         </Text>
       </Box>

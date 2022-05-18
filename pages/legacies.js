@@ -14,9 +14,6 @@ export default function Home() {
         backgroundPosition={'center'}
         alignItems={'center'}
         justifyContent={'center'}
-        backgroundSize={'cover'}
-        backgroundAttachment={'fixed'}
-        backgroundPosition={'center'}
         >
         <Text padding={'50px 0'} fontWeight={700} 
               textDecoration={'underline'}

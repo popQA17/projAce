@@ -1,8 +1,10 @@
 import {useRouter} from 'next/router'
-import { Box, UnorderedList, ListItem, Text, Stack, HStack, Image} from '@chakra-ui/react'
+import { Box, UnorderedList, ListItem, Text, Stack, HStack, Image, useMediaQuery} from '@chakra-ui/react'
 import LegacyCard from '../../components/LegacyCard'
+import DidYouKnow from '../../components/DidYouKnow'
 export default function Navigation(){
   const router = useRouter()
+  const [smalldevice] = useMediaQuery('(max-width: 850px)')
   return(
     <div>
       <Box 
@@ -19,6 +21,9 @@ export default function Navigation(){
         backgroundSize={'cover'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}
+
+        backgroundColor={'rgba(0,0,0,.5)'} /* Tint color */
+        backgroundBlendMode={'multiply'}
         >
         <Text padding={'50px 0'} fontWeight={700} 
               textDecoration={'underline'}
@@ -27,9 +32,8 @@ export default function Navigation(){
           Warfare
         </Text>
       </Box>
-        <Stack 
-          spacing={'20px'} 
-          padding={'0px 0px'}>
+      <Box width={'100%'} display='flex' justifyContent='center'>
+        <Stack spacing={'20px'}   padding={'100px 50px'}  width={smalldevice ? '99vw' : '70vw'}>
           <LegacyCard title='Gunpowder' img='https://static.turbosquid.com/Preview/001169/812/VX/3D-gunpowder-loose_1200.jpg'>
             <UnorderedList>
               <ListItem fontSize="17px">Gunpowder is the first explosive made.</ListItem>
@@ -56,6 +60,7 @@ export default function Navigation(){
               </UnorderedList>
             </LegacyCard>
         </Stack>
+        </Box>
     </div>
   )
 }

@@ -1,8 +1,11 @@
 import {useRouter} from 'next/router'
-import { Box, UnorderedList, ListItem, Text, Stack, HStack, Image} from '@chakra-ui/react'
+import { Box, UnorderedList, ListItem, Text, Stack, HStack, Image, useMediaQuery} from '@chakra-ui/react'
 import LegacyCard from '../../components/LegacyCard'
+import DidYouKnow from '../../components/DidYouKnow'
 export default function Navigation(){
   const router = useRouter()
+  const [smalldevice] = useMediaQuery('(max-width: 850px)')
+
   return(
     <div>
       <Box 
@@ -19,6 +22,8 @@ export default function Navigation(){
         backgroundSize={'cover'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}
+        backgroundColor={'rgba(0,0,0,.5)'} /* Tint color */
+        backgroundBlendMode={'multiply'}
         >
         <Text padding={'50px 0'} fontWeight={700} 
               textDecoration={'underline'}
@@ -27,9 +32,10 @@ export default function Navigation(){
           Printing
         </Text>
       </Box>
+      <DidYouKnow centered={true} position='fixed' right='0' text={'Cai Lun was an official at the court of the Han Dynasty (206 BCE-220 AD)! He made paper from coarse fibre, and other rough materials.'}/>
+      <Box width={'100%'} display='flex' justifyContent='center'>
         <Stack 
-          spacing={'20px'} 
-          padding={'0px 0px'}>
+spacing={'20px'}   padding={'100px 50px'}  width={smalldevice ? '99vw' : '60vw'}>
           <LegacyCard title='Paper' img='https://clipart.world/wp-content/uploads/2020/08/old-paper-scroll-png-transparent.png'>
           <UnorderedList>
               <ListItem fontSize="17px">Before paper was invented, people used natural materials like bones, shells, wood, papyrus scrolls, and bamboo to write on.</ListItem>
@@ -54,6 +60,7 @@ export default function Navigation(){
               </UnorderedList>
             </LegacyCard>
         </Stack>
+        </Box>
     </div>
   )
 }
