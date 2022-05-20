@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }) {
   const [loaded, setloaded] = useState(router.pathanme == 'login' ? 'completed' : 'loading')
   const [content, setcontent] = useState('')
   function StartLoading(){
+    if (loaded != 'completed') {
     setTimeout(() => {
       setcontent(
         <>
@@ -68,6 +69,7 @@ function MyApp({ Component, pageProps }) {
   setTimeout(()=>{
     setloaded('completed')
   }, 15000)
+    }
   }
   useEffect(()=>{
     StartLoading()
