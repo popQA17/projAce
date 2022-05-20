@@ -53,10 +53,10 @@ export default function Home() {
                 colorScheme={'blue'}
                 _hover={{ bg: 'blue.500' }}
                 onClick={() => {
-                  window.location.href = '#about'
+                  router.push('/quiz')
                 }}
                 >
-                Learn more
+                Take a Quiz
               </Button>
               <Button
                 bg={'whiteAlpha.300'}
