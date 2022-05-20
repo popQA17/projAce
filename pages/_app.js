@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
     show: { opacity: 1, scale: 1 }
   }
   
-  const [loaded, setloaded] = useState(router.pathanme == 'login' ? 'completed' : 'loading')
+  const [loaded, setloaded] = useState(router.pathname == 'login' ? 'completed' : 'loading')
   const [content, setcontent] = useState('')
   function StartLoading(){
     if (loaded != 'completed') {
