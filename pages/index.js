@@ -42,17 +42,8 @@ export default function Home() {
               fontWeight={700}
               lineHeight={1.2}
               fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
-              Legacies of
+              Legacies of <span style={{textDecoration:'underline', textDecorationColor:'#4299E1', textDecorationThickness:'6px'}}>Ancient China</span>
             </Text>
-            <Text 
-              fontWeight={700}
-              lineHeight={1.2}
-              fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}
-              color='white'
-              textDecoration={'underline'}
-              textDecorationColor={'blue.400'}
-              textDecorationThickness={'6px'}
-              >Ancient China</Text>
             </HStack>
             <Stack direction={'row'}>
               <Button

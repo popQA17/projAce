@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
     show: { opacity: 1, scale: 1 }
   }
   
-  const [loaded, setloaded] = useState('completed')
+  const [loaded, setloaded] = useState(router.pathanme == 'login' ? 'completed' : 'loading')
   const [content, setcontent] = useState('')
   function StartLoading(){
     setTimeout(() => {
@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
           <img src='https://i.imgur.com/yVrUcGT.png' height='200px' width='200px'/>
           </motion.div>
             <motion.div transition={{delay: 2, duration: 1, type: 'linear'}} initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0 }}>
-            <Heading color={'white'} fontSize='30px'>Ancient China</Heading>
+            <Heading color={'black'} fontSize='30px'>Ancient China</Heading>
             </motion.div>
           </motion.div>
         </>
@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
       <>
         <motion.div transition={{duration: 1.5, type: 'linear'}} initial={{opacity: 0, scale: 0.5}} animate={{opacity: 1, scale: 1 }}>
         <Box textAlign={'center'}>
-          <Heading color={'white'} fontSize='30px'>Proudly Presented by:</Heading>
+          <Heading color={'black'} fontSize='30px'>Proudly Presented by:</Heading>
           <Heading fontFamily={'Comfortaa'} fontSize={'50px'} color='blue.400'>Group 4</Heading>
         </Box>
       </motion.div>
@@ -69,10 +69,10 @@ function MyApp({ Component, pageProps }) {
     setloaded('completed')
   }, 15000)
   }
-  /*useEffect(()=>{
+  useEffect(()=>{
     StartLoading()
-  }, []) */
-  /*useEffect(()=>{
+  }, [])
+  useEffect(()=>{
     const loadFallback = setTimeout(()=>{
       $('.preloader').addClass('preloaded')
       setloaded('starting')
@@ -87,7 +87,7 @@ function MyApp({ Component, pageProps }) {
       }
     }) 
   
-  }, [])*/
+  }, [])
   const theme = extendTheme({
     fonts: {
       heading: 'Amatic SC, Arial',
@@ -104,13 +104,14 @@ function MyApp({ Component, pageProps }) {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <NextNProgress />
-    <Box className={'preloader'} display='flex'  backdropFilter={'blur(100px)'} justifyContent={'center'} alignItems='center' transition='ease-in-out 1s opacity' height={'100vh'} width={'100vw'} zIndex={'1001'} position={'fixed'} bg={'transparent'} top={loaded== 'completed' &&  '100vh'} pointerEvents={'intitial'}>
-      
+    <Box className={'preloader'} display='flex' justifyContent={'center'} alignItems='center' transition='ease-in-out 1s all' transitionProperty={'opacity'} height={'100vh'} width={'100vw'} zIndex={'1001'} position={'fixed'} opacity={loaded == 'completed' ? '0' : '1'} bg={'white'} pointerEvents={'none'}>
         <Box>
-        <motion.div   transition={{delay: 15}} initial={{scale: 1, opacity: 1}} animate={{scale: 0.9, opacity: 0}}>{content}</motion.div>
+          {content}
         </Box>
     </Box>
-    <Navbar/>
+    {router.pathname != '/login' && 
+      <Navbar/>
+    }
     <Component {...pageProps} />
     
   </ChakraProvider>  

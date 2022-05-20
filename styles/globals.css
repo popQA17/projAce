@@ -63,3 +63,8 @@ a {
   }
 }
 
+
+
+.preloader{
+  pointer-events: none !important;
+}
