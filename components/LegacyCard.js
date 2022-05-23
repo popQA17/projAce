@@ -37,8 +37,9 @@ const LegacyCard = (props) => {
     </DrawerContent>
   </Drawer>
     <HStack ref={ref} height={'420px'} overflowY='hidden' alignItems='center' data-aos="zoom-in" spacing={'100px'} padding={'0px'}>
-      <Image height='auto' 
+      {props.img && <Image height='auto' 
       src={props.img} borderRadius={'10px'} width={smalldevice? '200px' : '300px'}/>
+  }
       <Box height={'100%'}>
         <Text fontSize='30px'>
           {props.title}

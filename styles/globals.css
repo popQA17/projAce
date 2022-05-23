@@ -68,3 +68,10 @@ a {
 .preloader{
   pointer-events: none !important;
 }
+
+.kniwefwefsfwfwedwfff{
+  hyphens: auto;
+  word-break: break-all !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}

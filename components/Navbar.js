@@ -35,11 +35,11 @@ const Navbar = (props) =>{
           <MenuItem className={!show && 'dropdownbtn'} onClick={()=> router.push('/legacies/printing')}>Printing</MenuItem>
         </MenuList>
       </Menu>
-      <Button colorScheme={''} variant={'ghost'} onClick={()=> router.push("/")}>
+      <Button colorScheme={''} variant={'ghost'} onClick={()=> router.push("/group-members")}>
         Group Members
       </Button>
 
-      <Button colorScheme={''} variant={'ghost'} onClick={()=> router.push("/")}>
+      <Button colorScheme={''} variant={'ghost'} onClick={()=> router.push("/sources")}>
         Sources
       </Button>
     </HStack>
