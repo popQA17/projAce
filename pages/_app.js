@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
     show: { opacity: 1, scale: 1 }
   }
   
-  const [loaded, setloaded] = useState(router.pathname == 'login' ? 'completed' : 'loading')
+  const [loaded, setloaded] = useState(router.pathname == 'login' ? 'completed' : process.env.NEXT_PUBLIC_ENVIROMENT == 'development' ? 'completed' : 'loading')
   const [content, setcontent] = useState('')
   function StartLoading(){
     if (loaded != 'completed') {
@@ -72,22 +72,19 @@ function MyApp({ Component, pageProps }) {
     }
   }
   useEffect(()=>{
-    StartLoading()
-  }, [])
-  useEffect(()=>{
-    const loadFallback = setTimeout(()=>{
-      $('.preloader').addClass('preloaded')
-      setloaded('starting')
-      StartLoading()
-    }, 5000)
-    window.addEventListener('load', function () {
-      if (loaded == false){
-        clearTimeout(loadFallback)
+    if (loaded != 'completed') {
+      const loadFallback = setTimeout(()=>{
         $('.preloader').addClass('preloaded')
         setloaded('starting')
         StartLoading()
-      }
-    }) 
+      }, 5000)
+      window.addEventListener('load', function () {
+          clearTimeout(loadFallback)
+          $('.preloader').addClass('preloaded')
+          setloaded('starting')
+          StartLoading()
+      }) 
+    }
   
   }, [])
   const theme = extendTheme({
