@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import {FormControl, useToast, Input, FormLabel, FormHelperText, FormErrorMessage} from '@chakra-ui/react'
+import {FormControl, useToast, Input, FormLabel, FormHelperText, FormErrorMessage, OrderedList, ListItem} from '@chakra-ui/react'
 import Cookie from 'js-cookie'
 import {useState, useEffect} from 'react'
 import $ from 'jquery'
@@ -73,13 +73,28 @@ export default function Home() {
           </Stack>
         </VStack>
       </Flex>
-        <Box marginTop={'50px'}>
+      <Box display={'flex'} width='99vw' alignItems='center' flexDirection={'column'}>
+        <Box marginTop={'50px'} >
           <Text display={'flex'} width={'100%'} justifyContent={'center'} fontWeight={'600'} textAlign={'center'} fontSize={'40px'}>
-            Dynasties of <Text fontWeight={'600'} fontSize={'40px'} 
-              textDecoration={'underline'}
-              textDecorationColor={'blue.400'}
-              textDecorationThickness={'6px'}> Ancient China</Text>
+            Dynasties of Ancient China
           </Text>
+          <br/>
+          <OrderedList>
+            <ListItem fontSize={'17px'}>Xia Dynasty (c. 2070-1600 BC) </ListItem>
+            <ListItem fontSize={'17px'}>Shang Dynasty (c. 1600-1050 BC)</ListItem>
+            <ListItem fontSize={'17px'}>Zhou Dynasty (c. 1046-256 BC)</ListItem>
+            <ListItem fontSize={'17px'}>Qin Dynasty (221-206 BC)</ListItem>
+            <ListItem fontSize={'17px'}>Han Dynasty (206 BCE-220 AD)</ListItem>
+            <ListItem fontSize={'17px'}>Six Dynasties Period</ListItem>
+            <ListItem fontSize={'17px'}>Sui Dynasty (581-618)</ListItem>
+            <ListItem fontSize={'17px'}>Tang Dynasty (618-906)</ListItem>
+            <ListItem fontSize={'17px'}>Five Dynasties Period, Ten Kingdoms (907-960)</ListItem>
+            <ListItem fontSize={'17px'}>Song Dynasty (960-1279)</ListItem>
+            <ListItem fontSize={'17px'}>Yuan Dynasty (1279-1368)</ListItem>
+            <ListItem fontSize={'17px'}>Ming Dynasty (1368-1644)</ListItem>
+            <ListItem fontSize={'17px'}>Qing Dynasty (1644-1912)</ListItem>
+          </OrderedList>
+        </Box>
         </Box>
       </div>
   )
