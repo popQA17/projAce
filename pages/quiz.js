@@ -40,9 +40,9 @@ export default function Quiz(){
             <Button variant='ghost' colorScheme='blue' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme={'blue'} onCLick={()=>{
+            <Button colorScheme={'blue'} onClick={()=>{
               onClose()
-              window.location.open('https://quiz.popplays.tk')
+              window.location.replace('https://quiz.popplays.tk')
             }}>Start</Button>
           </ModalFooter>
         </ModalContent>
