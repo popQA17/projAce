@@ -38,7 +38,6 @@ const Navbar = (props) =>{
       <Button colorScheme={''} variant={'ghost'} onClick={()=> router.push("/group-members")}>
         Group Members
       </Button>
-
       <Button colorScheme={''} variant={'ghost'} onClick={()=> router.push("/sources")}>
         Sources
       </Button>
