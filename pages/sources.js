@@ -57,7 +57,8 @@ export default function Home() {
                 <ListItem fontSize="17px"><Link>https://www.collinsdictionary.com/dictionary/english/paper</Link></ListItem>
                 <ListItem fontSize="17px"><Link>https://news.cgtn.com/news/2021-07-20/Live-Experience-movable-type-printing-in-northeast-China-s-Dalian-123yJnwN1xC/img/df3881799be24029a8b60ccc5801c4fe/df3881799be24029a8b60ccc5801c4fe.png</Link></ListItem>
                 <ListItem fontSize="17px"><Link>https://www.easytourchina.com/photo-p16385-ancient-chinese-printing</Link></ListItem>
-                <ListItem fontSize="17px"><Link>http://www.silk-road.com/artl/printing.shtml#:~:text=Printing%20was%20invented%20in%20China,on%20blocks%20cut%20from%20wood.</Link></ListItem>
+                <ListItem fontSize="17px"><Link>http://www.silk-road.com/artl/printing.shtml#:~:text=Printing%20was%20invented%20in%20China,on%20blocks%20cut%20from%20wood</Link></ListItem>
+                <ListItem fontSize="17px"><Link>https://upload.wikimedia.org/wikipedia/commons/b/b0/Chinese_Junk_Keying.jpg</Link></ListItem>
 
               </UnorderedList>
         </LegacyCard>

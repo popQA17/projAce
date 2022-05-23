@@ -52,6 +52,14 @@ export default function Navigation(){
 
               </UnorderedList>
             </LegacyCard>
+            <LegacyCard title='Travelling' img='https://upload.wikimedia.org/wikipedia/commons/b/b0/Chinese_Junk_Keying.jpg'>
+              <UnorderedList>
+                <ListItem fontSize="17px">Junks first appeared in China during the Han Dynasty (206 BC - 220 AD)</ListItem>
+                <ListItem fontSize="17px">It has a small, shallow-hulled vessel with one or two masts. </ListItem>
+                <ListItem fontSize="17px">The boat’s narrow shape was designed to allow it to glide quickly across the water, while the flat bottom made it possible to dock in shallow waters.</ListItem>
+
+              </UnorderedList>
+            </LegacyCard>
         </Stack>
         </Box>
     </div>
